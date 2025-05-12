@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="../css/registration.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <img src="../misc/banklogo.png" alt="Robin the Bank Logo" width="150">
+    <h1>Account Registration</h1>
+    <form action="../functions/registrationFunctions.php" method="post">
+      <label>Legal First Name:</label><br>
+      <input type="text" name="firstname" required><br><br>
+      <label>Legal Middle Name: (Optional)</label><br>
+      <input type="text" name="middlename"><br><br>
+
+      <label>Legal Last Name:</label><br>
+      <input type="text" name="lastname" required><br><br>
+
+      <label>Date of Birth:</label><br>
+      <input type="date" name="dob" required><br><br>
+
+      <label>Gender:</label><br>
+      <select type="gender" name="gender" required>
+        <option disabled selected>Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+        <option>Prefer not to say</option>
+      </select><br><br>
+
+      <label>Email Address:</label><br>
+      <input type="email" name="email" required><br><br>
+
+      <label>US Phone Number:</label><br>
+      <input type="ssn" name="phone1" maxlength="3" size="3" required> -
+      <input type="ssn" name="phone2" maxlength="3" size="3" required> -
+      <input type="ssn" name="phone3" maxlength="4" size="4" required><br><br>
+
+      <label>Address Line 1:</label><br>
+      <input type="text" name="address1" required><br><br>
+
+      <label>Address Line 2 (Optional):</label><br>
+      <input type="text" name="address2"><br><br>
+
+      <label>City:</label><br>
+      <input type="text" name="city" required><br><br>
+
+      <label>State:</label><br>
+      <select type="dopdown" name="stat" required>
+        <option value="" disabled selected>Select a state</option>
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select><br><br>
+
+      <label>Zip Code:</label><br>
+      <input type="text" name="zip" maxlength="5" size="5" required><br><br>
+
+      <label>Social Security Number:</label><br>
+      <input type="ssn" name="ssn1" maxlength="3" size="3" required> -
+      <input type="ssn" name="ssn2" maxlength="2" size="2" required> -
+      <input type="ssn" name="ssn3" maxlength="4" size="4" required><br><br>
+
+      <label>Username:</label><br>
+      <input type="text" name="username" required><br><br>
+
+      <label>Password:</label><br>
+      <input type="password" id="password" name="pw" onkeyup='check();' required><br><br>
+
+      <label>Confirm Password:</label><br>
+      <input type="password" id="confirm_password" name="confirm_password" onkeyup='check();' required><br>
+      <span id='message'></span></span><br><br>
+
+      <label>Security Question:</label><br>
+      <select type="sq" name=" securityQuestion" required>
+        <option disabled selected>Select a question</option>
+        <option>What is your pet's name?</option>
+        <option>In what city were you born?</option>
+        <option>What was your childhood nickname?</option>
+        <option>What is your mother's maiden name?</option>
+        <option>What was the make and model of your first car?</option>
+      </select><br><br>
+
+      <label>Answer:</label><br>
+      <input type="text" name="ans" required><br><br>
+
+      <label>How did you hear about us?</label><br>
+      <select type="dopdown" name="aboutUs" required>
+        <option disabled selected>Select</option>
+        <option value=1>Internet Search</option>
+        <option value=2>Social Media</option>
+        <option value=3>Advertisement</option>
+        <option value=4>Friend or Family</option>
+        <option value=5>Other</option>
+        <option value=6>Prefer not to say</option>
+      </select><br><br>
+
+      <label>Account Type:</label><br>
+      <select type="dopdown" name="accttype" required>
+        <option disabled selected>Select</option>
+        <option value=1>Checking</option>
+        <option value=0>Savings</option>
+      </select><br><br>
+
+      <label>
+        <input type="checkbox" required>
+        I agree to the Terms and Conditions
+      </label><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+    <a href="../index.php">Already have an account? Login here.</a>
+
+    <footer>
+      <p>&copy; 2024 Robin the Bank. All rights reserved.</p>
+    </footer>
+  </div>
+  <script src="../functions/passwordcheck.js"></script>
+</body>
+
+</html>

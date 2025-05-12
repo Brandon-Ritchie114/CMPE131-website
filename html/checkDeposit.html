@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Robin the Bank - Check Deposit</title>
+  <link rel="stylesheet" href="../css/check.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+    <img src="banklogo.png" alt="Robin the Bank Logo" class="logo">
+    <h1>Check Deposit</h1>
+
+    <p class="instructions">
+    Please upload clear images of the front and back of your check. On the back, ensure you write: <i>"For Mobile Deposit Only - Robin the Bank"</i>.
+    </p>
+
+    <form onsubmit="submitcomfirmation(event)">
+      <label for="checkfront">Front:</label>
+      <input type="file" id="checkfront" accept="image/*" required>
+      <label for="checkback">Back:</label>
+      <input type="file" id="checkback" accept="image/*" required>
+      <button type="submit" class="button">Deposit</button>
+    </form>
+
+    <button class="button" onclick="supportmessage()">Chat with Support</button>
+
+    <footer>
+      &copy; 2024 Robin the Bank. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    function submitcomfirmation(event) {
+      event.preventDefault();
+      window.open('deposit_receipt.html', '_blank');
+      alert('Deposit request has been submitted. It will be processed and you will be notified within 2-5 business days.');
+      window.location.reload();
+    }
+
+    function supportmessage() {
+      alert('Support not avaliable currently. Try again later.');
+    }
+  </script>
+</body>
+
+</html>

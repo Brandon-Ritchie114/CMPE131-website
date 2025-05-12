@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Registration Page</title>
+    <link rel="stylesheet" href="../css/registration.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="../misc/banklogo.png" alt="Robin the Bank Logo" width="150">
+        <h1>Employee Registration</h1>
+        <form action="../functions/employeeeRegistrationFunctions.php" method="post">
+            <label>Legal First Name:</label><br>
+            <input type="text" name="firstname" required><br><br>
+            <label>Legal Middle Name: (Optional)</label><br>
+            <input type="text" name="middlename"><br><br>
+
+            <label>Legal Last Name:</label><br>
+            <input type="text" name="lastname" required><br><br>
+
+            <label>ID Number :</label><br>
+            <input type="text" name="IDnum" required><br><br>
+
+            <label>Username:</label><br>
+            <input type="text" name="username" required><br><br>
+
+            <label>Password:</label><br>
+            <input type="password" id="password" name="pw" onkeyup='check();' required><br><br>
+
+            <label>Confirm Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" onkeyup='check();' required><br>
+            <span id='message'></span></span><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br><br>
+        <a href="../index.php">Already have an account? Login here.</a>
+
+        <footer>
+            <p>&copy; 2024 Robin the Bank. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="../functions/passwordcheck.js"></script>
+</body>
+
+</html>

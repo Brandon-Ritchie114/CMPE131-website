@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Robin the Bank Login Page</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="../misc/banklogo.png" alt="Robin the Bank Logo" class="logo">
+        <h1>Reset Password</h1>
+
+        <form action="../functions/changepw.php" method="post">
+            <label>Security Questions:</label><br>
+            <ul>
+                <li>What is your pet's name?</li>
+                <li>In what city were you born?</li>
+                <li>What was your childhood nickname?</li>
+                <li>What is your mother's maiden name?</li>
+                <li>What was the make and model of your first car?</li>
+            </ul>
+            <br><br>
+            <label type="text"> Security Question</label>
+            <input type="text" name="securityQuestion" required><br><br>
+            <label type="text"> Username</label>
+            <input type="text" name="username" required><br><br>
+            <label>New password:</label><br>
+            <input type="password" id="password" name="pw" onkeyup='check();' required><br><br>
+
+            <label>Confirm New Password:</label><br>
+            <input type="password" id="confirm_password" name="confirm_password" onkeyup='check();' required><br>
+            <span id='message'></span></span>
+
+            <input type="submit" value="Reset">
+        </form>
+
+        <button class="button" onclick="supportMessage()">Chat with Support</button>
+        <br><br>
+        <a href="../index.php">Already have an account? Login here.</a>
+        <footer>
+            &copy; 2024 Robin the Bank. All rights reserved.
+        </footer>
+
+    </div>
+
+    <script src="../functions/passwordcheck.js"></script>
+    <script src="../functions/changepw.php"></script>
+    <script>
+        function supportMessage() {
+            alert('Support not avaliable currently. Try again later');
+        }
+    </script>
+</body>
+
+</html>
